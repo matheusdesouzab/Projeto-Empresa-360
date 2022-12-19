@@ -3,6 +3,8 @@ import Home from '@/views/HomeComponent.vue'
 import Login from '@/views/LoginComponent.vue'
 import Site from '@/views/SiteComponent'
 import Vendas from '@/components/vendas/Vendas'
+import Leads from '@/components/vendas/Leads'
+import Contratos from '@/components/vendas/Contratos'
 import Servicos from '@/components/servicos/Servicos'
 
 const routes = [
@@ -16,7 +18,15 @@ const routes = [
         children: [
             {
                 path: 'vendas',
-                component: Vendas
+                component: Vendas,
+                children: [
+                    {
+                        path: 'leads', component: Leads
+                    },
+                    {
+                        path: 'contratos', component: Contratos
+                    }
+                ]
             },
             {
                 path: 'servicos',
