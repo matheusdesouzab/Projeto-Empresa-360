@@ -64,4 +64,10 @@
     border-right: none;
 }
 
+.router-link-exact-active{
+    color: #fff;
+    background-color: blue;
+    border-color: blue;
+}
+
 </style>
