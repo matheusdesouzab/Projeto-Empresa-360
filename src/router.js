@@ -5,6 +5,7 @@ import Site from '@/views/SiteComponent'
 import Vendas from '@/components/vendas/Vendas'
 import Leads from '@/components/vendas/Leads'
 import Contratos from '@/components/vendas/Contratos'
+import Dashboard from '@/components/dashboard/Dashboard'
 import Servicos from '@/components/servicos/Servicos'
 
 const routes = [
@@ -31,6 +32,10 @@ const routes = [
             {
                 path: 'servicos',
                 component: Servicos
+            },
+            {
+                path: 'dashboard',
+                component: Dashboard
             }
         ]
     },
