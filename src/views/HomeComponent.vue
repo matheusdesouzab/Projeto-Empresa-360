@@ -15,19 +15,19 @@
 
         <div class="d-flex">
             <div class="list-group menu-esquerda">
-                <router-link class="list-group-item list-group-item-action" href="#" to="/home">
+                <router-link class="list-group-item list-group-item-action" href="#" to="/home" exact-active-class="active">
                     <i class="bi bi-speedometer2"></i> Dashboard
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" href="#" to="/home/vendas">
+                <router-link class="list-group-item list-group-item-action" href="#" to="/home/vendas" exact-active-class="active">
                     <i class="bi bi-cart"></i> Vendas
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" href="#" to="/home/vendas/leads">
+                <router-link class="list-group-item list-group-item-action" href="#" to="/home/vendas/leads" exact-active-class="active">
                     <i class="bi bi-caret-right"></i> Leads
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" href="#" to="/home/vendas/contratos">
+                <router-link class="list-group-item list-group-item-action" href="#" to="/home/vendas/contratos" exact-active-class="active">
                     <i class="bi bi-caret-right"></i> Contratos
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" href="#" to="/home/servicos">
+                <router-link class="list-group-item list-group-item-action" href="#" to="/home/servicos" exact-active-class="active">
                     <i class="bi bi-card-checklist"></i> Serviços
                 </router-link>
             </div>
@@ -64,10 +64,5 @@
     border-right: none;
 }
 
-.router-link-exact-active{
-    color: #fff;
-    background-color: blue;
-    border-color: blue;
-}
 
 </style>
