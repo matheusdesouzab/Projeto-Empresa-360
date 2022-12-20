@@ -23,7 +23,7 @@
 
     <div class="row mt-5">
         <div class="col-auto">
-            <router-link to="/home/vendas/leads" class="btn btn-secondary">Voltar</router-link>
+            <button type="button" class="btn btn-info text-white fw-bold" @click="$router.push({ name: 'leads' })">Voltar</button>
         </div>
     </div>
 

@@ -24,7 +24,7 @@
                 <router-link class="list-group-item list-group-item-action" to="/home/vendas/leads" exact-active-class="active">
                     <i class="bi bi-caret-right"></i> Leads
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" to="/home/vendas/contratos" exact-active-class="active">
+                <router-link class="list-group-item list-group-item-action" :to="{ name: 'contratos' }" exact-active-class="active">
                     <i class="bi bi-caret-right"></i> Contratos
                 </router-link>
                 <router-link class="list-group-item list-group-item-action" to="/home/servicos" exact-active-class="active">
