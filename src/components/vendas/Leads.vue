@@ -12,7 +12,7 @@
             </thead>
             <tbody>
                 <tr v-for="d in dados" :key="d.id">
-                    <td>{{  d.id }}</td>
+                    <td>{{ d.id }}</td>
                     <td>{{ d.nome }}</td>
                     <td>{{ d.telefone }}</td>
                     <td>
@@ -34,15 +34,15 @@ export default {
         dados: null
     }),
     methods: {
-        getDadosApi(){
+        getDadosApi() {
             fetch('http://localhost:3000/leads')
-            .then(response => response.json())
-            .then(response => {
-                this.dados = response
-            })
+                .then(response => response.json())
+                .then(response => {
+                    this.dados = response
+                })
         }
     },
-    created(){
+    created() {
         this.getDadosApi()
     }
 }
