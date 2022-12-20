@@ -9,6 +9,7 @@ import Contratos from '@/components/vendas/Contratos'
 import Dashboard from '@/components/dashboard/Dashboard'
 import Servicos from '@/components/servicos/Servicos'
 import VendasPadrao from '@/components/vendas/VendasPadrao'
+import Servico from '@/components/servicos/Servico'
 
 const routes = [
     {
@@ -39,7 +40,13 @@ const routes = [
             },
             {
                 path: 'servicos',
-                component: Servicos
+                component: Servicos,
+                children: [
+                    {
+                        path: ':id',
+                        component: Servico
+                    }
+                ]
             },
             {
                 path: 'dashboard',
