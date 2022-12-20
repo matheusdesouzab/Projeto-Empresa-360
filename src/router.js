@@ -8,6 +8,7 @@ import Lead from '@/components/vendas/Lead'
 import Contratos from '@/components/vendas/Contratos'
 import Dashboard from '@/components/dashboard/Dashboard'
 import Servicos from '@/components/servicos/Servicos'
+import VendasPadrao from '@/components/vendas/VendasPadrao'
 
 const routes = [
     {
@@ -30,6 +31,9 @@ const routes = [
                     },
                     {
                         path: 'contratos', component: Contratos
+                    },
+                    {
+                        path: '', component: VendasPadrao
                     }
                 ]
             },
