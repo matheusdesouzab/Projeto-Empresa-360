@@ -43,6 +43,10 @@
                    <router-view></router-view>
                 </div>
 
+                <div class="rodape">
+                    <router-view name="rodape"></router-view>
+                </div>
+
             </div>
         </div>
     </div>
@@ -62,6 +66,14 @@
 .list-group-item {
     border-top: none;
     border-right: none;
+}
+
+.rodape{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
 }
 
 

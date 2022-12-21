@@ -1,15 +1,22 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+
 import Home from '@/views/HomeComponent.vue'
 import Login from '@/views/LoginComponent.vue'
 import Site from '@/views/SiteComponent'
+
 import Vendas from '@/components/vendas/Vendas'
 import Leads from '@/components/vendas/Leads'
 import Lead from '@/components/vendas/Lead'
 import Contratos from '@/components/vendas/Contratos'
-import Dashboard from '@/components/dashboard/Dashboard'
-import Servicos from '@/components/servicos/Servicos'
 import VendasPadrao from '@/components/vendas/VendasPadrao'
+
+import Servicos from '@/components/servicos/Servicos'
 import Servico from '@/components/servicos/Servico'
+import Opcoes from '@/components/servicos/Opcoes'
+import Indicadores from '@/components/servicos/Indicadores'
+
+import Dashboard from '@/components/dashboard/Dashboard'
+import DashboardRodape from '@/components/dashboard/DashboardRodape'
 
 const routes = [
     {
@@ -44,14 +51,21 @@ const routes = [
                 children: [
                     {
                         path: ':id',
-                        component: Servico,
-                        name: 'servico'
+                        name: 'servico',
+                        components: {
+                            default: Servico,
+                            opcoes: Opcoes,
+                            indicadores: Indicadores
+                        }
                     }
                 ]
             },
             {
                 path: 'dashboard',
-                component: Dashboard
+                components: {
+                    default: Dashboard,
+                    rodape: DashboardRodape
+                }
             }
         ]
     },
