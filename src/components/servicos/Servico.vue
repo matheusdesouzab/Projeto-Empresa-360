@@ -21,10 +21,9 @@ export default {
     created() {
         this.getDados(`http://localhost:3000/servicos/${this.$route.params.id}`)
     },
-    watch: {
-        $route(to, from){
-            if(to.params.id != undefined) this.getDados(`http://localhost:3000/servicos/${to.params.id}`)
-        }
+    beforeRouteUpdate(to, from, next){
+        this.getDados(`http://localhost:3000/servicos/${to.params.id}`)
+        next()
     }
 }
 </script>
