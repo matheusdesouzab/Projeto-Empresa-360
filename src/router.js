@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/views/HomeComponent.vue'
 import Login from '@/views/LoginComponent.vue'
 import Site from '@/views/SiteComponent'
+import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada'
 
 import Vendas from '@/components/vendas/Vendas'
 import Leads from '@/components/vendas/Leads'
@@ -52,6 +53,7 @@ const routes = [
                     {
                         path: ':id',
                         name: 'servico',
+                        alias: '/s/:id',
                         components: {
                             default: Servico,
                             opcoes: Opcoes,
@@ -72,6 +74,10 @@ const routes = [
     {
         path: '/login',
         component: Login
+    },
+    {
+        path: '/:catchAll(.*)*',
+        component: PaginaNaoEncontrada
     }
 ]
 
