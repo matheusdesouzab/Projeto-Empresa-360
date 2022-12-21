@@ -62,28 +62,19 @@ export default {
     }),
     methods: {
         pesquisar() {
-
-            Object.keys(this.formPesquisa).forEach(chave => {
-                if (this.formPesquisa[chave] == '') delete this.formPesquisa[chave]
-            })
-
-            const queryParams = new URLSearchParams(this.formPesquisa).toString()
-            const url = `http://localhost:3000/contratos?${this.parametrosDoRelacionamento}&${queryParams}`
-            
-            this.getDados(url)
+            const url = `http://localhost:3000/contratos?${this.parametrosDoRelacionamento}`
+            this.getDados(url, this.formPesquisa)
         }
     },
     beforeRouteUpdate(to, from, next) {
-        const queryParams = new URLSearchParams(to.query).toString()
-        const url = `http://localhost:3000/contratos?${this.parametrosDoRelacionamento}&${queryParams}`
-        this.getDados(url)
+        const url = `http://localhost:3000/contratos?${this.parametrosDoRelacionamento}`
+        this.getDados(url, to.query)
 
         next()
     },
     created() {
-        const queryParams = new URLSearchParams(this.$route.query).toString()
-        const url = `http://localhost:3000/contratos?${this.parametrosDoRelacionamento}&${queryParams}`
-        this.getDados(url)
+        const url = `http://localhost:3000/contratos?${this.parametrosDoRelacionamento}`
+        this.getDados(url, this.$route.query)
     }
 }
 </script>
