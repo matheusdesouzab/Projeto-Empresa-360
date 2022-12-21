@@ -44,7 +44,8 @@ const routes = [
                 children: [
                     {
                         path: ':id',
-                        component: Servico
+                        component: Servico,
+                        name: 'servico'
                     }
                 ]
             },
