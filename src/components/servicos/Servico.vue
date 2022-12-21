@@ -23,7 +23,7 @@ export default {
     },
     watch: {
         $route(to, from){
-            this.getDados(`http://localhost:3000/servicos/${to.params.id}`)
+            if(to.params.id != undefined) this.getDados(`http://localhost:3000/servicos/${to.params.id}`)
         }
     }
 }
