@@ -47,7 +47,9 @@ export default {
         next()
     },
     created() {
-        this.getDados('http://localhost:3000/contratos?_expand=lead&_expand=servico')
+        const queryParams = new URLSearchParams(this.$route.query).toString()
+        const url = `http://localhost:3000/contratos?${this.parametrosDoRelacionamento}&${queryParams}`
+        this.getDados(url)
     }
 }
 </script>
