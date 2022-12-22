@@ -22,11 +22,17 @@ import DashboardRodape from '@/components/dashboard/DashboardRodape'
 const routes = [
     {
         path: '/',
-        component: Site
+        component: Site,
+        meta: {
+            requerAutorizacao: false
+        }
     },
     {
         path: '/home',
         component: Home,
+        meta: {
+            requerAutorizacao: false
+        },
         children: [
             {
                 path: 'vendas',
@@ -88,6 +94,12 @@ const routes = [
 const router = createRouter({
     history: createWebHashHistory(),
     routes
+})
+
+router.beforeEach((to) => {
+    if(to.meta.requerAutorizacao){
+        
+    }
 })
 
 export default router
