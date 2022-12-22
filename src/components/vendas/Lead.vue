@@ -36,8 +36,11 @@ import ApiMixin from '@/mixins/ApiMixin'
 export default {
     name: 'Lead',
     mixins: [ApiMixin],
+    props: [
+        'id'
+    ],
     created() {
-        this.getDados(`http://localhost:3000/leads/${this.$route.params.id}`)
+        this.getDados(`http://localhost:3000/leads/${this.id}`)
     }
 }
 </script>
