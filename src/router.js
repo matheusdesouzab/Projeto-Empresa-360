@@ -39,7 +39,10 @@ const routes = [
                 component: Vendas,
                 children: [
                     {
-                        path: 'leads', component: Leads, name: 'leads'
+                        path: 'leads', component: Leads, name: 'leads', 
+                        beforeEnter(to, from){
+                            console.log('Guarda de rota - Before enter')
+                        }
                     },
                     {
                         path: 'leads/:id', component: Lead, props: true
@@ -98,8 +101,12 @@ const router = createRouter({
 
 router.beforeEach((to) => {
     if(to.meta.requerAutorizacao){
-        
+
     }
+})
+
+router.afterEach((to, from) => {
+
 })
 
 export default router

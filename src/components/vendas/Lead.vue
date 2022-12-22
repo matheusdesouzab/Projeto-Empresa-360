@@ -41,6 +41,10 @@ export default {
     ],
     created() {
         this.getDados(`http://localhost:3000/leads/${this.id}`)
+    },
+    beforeRouteLeave(){
+        const confimar = window.confirm("Deseja sair deste formulário?")
+        return confimar
     }
 }
 </script>
