@@ -1,23 +1,23 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import Home from '@/views/HomeComponent.vue'
-import Login from '@/views/LoginComponent.vue'
-import Site from '@/views/SiteComponent'
-import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada'
+const Home = () => import('@/views/HomeComponent.vue')
+const Login = () => import('@/views/LoginComponent.vue')
+const Site = () => import('@/views/SiteComponent.vue')
+const PaginaNaoEncontrada = () => import('@/views/PaginaNaoEncontrada.vue')
 
-import Vendas from '@/components/vendas/Vendas'
-import Leads from '@/components/vendas/Leads'
-import Lead from '@/components/vendas/Lead'
-import Contratos from '@/components/vendas/Contratos'
-import VendasPadrao from '@/components/vendas/VendasPadrao'
+const Vendas = () => import('@/components/vendas/Vendas')
+const Leads = () => import('@/components/vendas/Leads')
+const Lead = () => import('@/components/vendas/Lead')
+const Contratos = () => import('@/components/vendas/Contratos')
+const VendasPadrao = () => import('@/components/vendas/VendasPadrao')
 
-import Servicos from '@/components/servicos/Servicos'
-import Servico from '@/components/servicos/Servico'
-import Opcoes from '@/components/servicos/Opcoes'
-import Indicadores from '@/components/servicos/Indicadores'
+const Servicos = () => import('@/components/servicos/Servicos')
+const Servico = () => import('@/components/servicos/Servico')
+const Opcoes = () => import('@/components/servicos/Opcoes')
+const Indicadores = () => import('@/components/servicos/Indicadores')
 
-import Dashboard from '@/components/dashboard/Dashboard'
-import DashboardRodape from '@/components/dashboard/DashboardRodape'
+const Dashboard = () => import('@/components/dashboard/Dashboard')
+const DashboardRodape = () => import('@/components/dashboard/DashboardRodape')
 
 const routes = [
     {
@@ -39,8 +39,8 @@ const routes = [
                 component: Vendas,
                 children: [
                     {
-                        path: 'leads', component: Leads, name: 'leads', 
-                        beforeEnter(to, from){
+                        path: 'leads', component: Leads, name: 'leads',
+                        beforeEnter(to, from) {
                             console.log('Guarda de rota - Before enter')
                         }
                     },
@@ -96,11 +96,23 @@ const routes = [
 
 const router = createRouter({
     history: createWebHashHistory(),
+    scrollBehavior(to, from, savePosition) {
+
+        if(savePosition){
+            return savePosition
+        }
+
+        if (to.hash) {
+            return { el: to.hash }
+        }
+
+        return { left: 0, top: 0 }
+    },
     routes
 })
 
 router.beforeEach((to) => {
-    if(to.meta.requerAutorizacao){
+    if (to.meta.requerAutorizacao) {
 
     }
 })
